@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img-content/favicon.ico" type="image/x-icon">
+    <title>L A Y O V E R</title>
+</head>
+
+<body>
+
+    <!-- Navigation Bar HTML Code-->
+    <header>
+        <a href="https://open.spotify.com/album/7ixOAT89NSsgUITYc5ByB5?si=RxgwTfYdS_G26ZKzpQUhpA" class="LogoImg" target="_blank">
+            <img src="img-content/Web Dev II Logo.png" alt="Logo">
+        </a>
+
+        <input type="checkbox" id="menu-btn">
+        <label for="menu-btn">MENU</label>
+        
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#HOME">Home</a></li>
+                <li><a href="#ABOUT">About</a></li>
+                <li><a href="#TRACKS">Tracks</a></li>
+                <li><a href="#ARTIST">Artist</a></li>
+                <li><a href="https://www.instagram.com/thv?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Insta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Video Background HTML Code-->
+    <section id="HOME">
+        <div class="bg-container">
+            <video class="video-bg" autoplay loop muted plays-inline>
+                <source src="video-content/WEB VID BG.mp4" type="video/mp4">
+            </video>
+            <div class="homeTitle">
+                <img src="img-content/MainTitle.png" alt="Title">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section HTML Code-->
+    <section id="ABOUT" class="aboutBg">
+        <div class="aboutSec">
+
+            <div class="aboutTitle">
+                <h1>Aim of the Website</h1>
+            </div>
+
+            <div class="vLine"></div>
+            <div class="aboutContent">
+                <p>This website exists to let the world know about the wondrous being Kim Taehyung,<br>aka V of BTS, and his album Layover!</p>
+                <p>The purpose of this entire project was to serve as an educational assessment,<br>but it was also a way of showing appreciation for the artist's delightful creations!</p>
+                <p>Thank you for the time.<br>Enjoy and keep supporting our TaeTae! ˚ʚ♡ɞ˚</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Music Player Section HTML Code-->
+    <!-- ↓ Audio Source for the Tracks ↓ -->
+    <audio src="" id="audio"></audio>
+
+    <section id="TRACKS" class="tracksBG">
+        <div class="main-container">
+            <div class="playerTitle">
+                <img src="img-content/MusicPlayer Title.png" alt="Title">
+            </div>
+
+            <div class="tracks-container">
+                <div class="tracksSec">
+
+                    <!--Title and Disk-->
+                    <h1 class="track-title">Layover</h1>
+                    <div class="trackDisk"></div>
+
+                    <!--Seek Bar-->
+                    <div class="song-slider">
+                        <input type="range" value="0" class="seek-bar">
+                        <span class="time-current">00:00</span>
+                        <span class="duration-song">00:00</span>
+                    </div>
+
+                    <!--Back Button-->
+                    <div class="controls">
+                        <button class="Btn backtrack">
+                            <img src="images/pre.png" alt="back button">
+                        </button>
+
+                        <!-- Play/Pause Button-->
+                        <button class="clickBTN pause">
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <!--Next Button-->
+                        <button class="Btn next">
+                            <img src="images/nxt.png" alt="next button">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Artist Section HTML Code -->
+    <section id="ARTIST" class="artistBg">
+        <div class="artistSec">
+
+            <div class="artistTitle">
+                <img src="img-content/AboutArtist.png" alt="Title">
+            </div>
+            <div class="space"></div>
+            <div class="artistImage">
+                <img src="img-content/Artist Img.png" alt="Artist's Photo">
+            </div>
+            <div class="artistDesc">
+                <span>
+                    <p>Kim Taehyung, better known as V, is a South Korean singer who is a member
+                        <br>of the global sensation, BTS!
+                    </p>
+                    <p>As a lead dancer, sub vocalist, and visual for BTS, he plays various roles.
+                        <br>Additionally, V has a Pomeranian named Yeontan,<br>enjoys different types of art, and is a
+                        video game enthusiast.
+                    </p>
+                    <p>V called the album layover because the journey to the end of life is long.
+                        <br>It would be a good idea to take time for yourself to rest, to reflect,<br>and to create new
+                        goals.
+                        Furthermore, V, who is romantic by nature,<br>wanted to express gratitude to his fans (ARMYS)
+                        <br>around the world for their unwavering support!
+                    </p>
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- JS Files (for music player section)-->
+    <script src="music.js"></script>
+    <script src="player.js"></script>
+
+</body>
+
+</html>
