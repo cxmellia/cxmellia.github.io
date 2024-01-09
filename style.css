@@ -1,0 +1,932 @@
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll Bar CSS Properties*/
+::-webkit-scrollbar {
+    width: 1.6vw;
+    background-color: #DBD1C7;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #DBD1C7;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, #848043);
+    border-radius: 20px;
+}
+
+
+/* Navigation Bar CSS Properties */
+.LogoImg img {
+    width: 220px;
+    height: auto;
+    padding: 5px 20px;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: #dbd1c7d4;
+    padding: 0px 4%;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links li {
+    position: relative;
+    float: left;
+}
+
+.nav-links a {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #848043;
+    transition: 0.2s ease-in;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #8F8C52;
+    color: white;
+}
+
+#menu-btn {
+    display: none;
+}
+
+header label {
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #848043;
+    display: none;
+}
+
+/* To make NAV BAR Responsive !! */
+@media screen and (max-width: 1000px) {
+    header {
+        padding: 10px 4%;
+    }
+
+    header label {
+        display: initial;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 100%;
+        background-color: #dbd1c7e0;
+        border-top: 1px solid #8F8C52;
+        display: none;
+    }
+
+    .nav-links li {
+        width: 100%
+    }
+
+    #menu-btn:checked~.nav-links {
+        display: initial;
+    }
+
+}
+
+
+
+/* Video Background CSS Properties */
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+
+}
+
+.bg-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.homeTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: transitionIn 0.75s;
+}
+
+.homeTitle img {
+    padding: 85px 0px 0px 25px;
+    width: 85%;
+}
+
+
+/* About Section CSS Properties */
+.aboutBg {
+    background-image: url('bg-images/Purpose.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.aboutSec {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.7fr 0.25fr 1fr;
+    grid-template-areas:
+        "title title title"
+        "vline vline vline"
+        "Acontent Acontent Acontent";
+}
+
+.aboutTitle {
+    grid-area: title;
+}
+
+.aboutTitle h1 {
+    text-align: center;
+    position: relative;
+    top: 40%;
+    font-size: 85px;
+    font-weight: 600;
+    color: #4F473A;
+}
+
+.vLine {
+    grid-area: vline;
+}
+
+.vLine {
+    margin-left: 50%;
+    border-left: 3px solid #4F473A;
+}
+
+.aboutContent {
+    grid-area: Acontent;
+}
+
+.aboutContent p {
+    text-align: center;
+    position: relative;
+    top: 5%;
+    font-size: 26px;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: #4F473A;
+}
+
+
+
+/* Tracks Section CSS Properties */
+.tracksBG {
+    background-image: url('bg-images/tracks_art-by-peter-barker.JPG');
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.main-container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1.5fr;
+    grid-template-areas:
+        "title title title"
+        "player player player";
+}
+
+.playerTitle {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerTitle img {
+    width: 50%;
+}
+
+.tracks-container {
+    grid-area: player;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tracksSec {
+    width: 340px;
+    height: 480px;
+    border-radius: 25px;
+    border: 2px solid #4F473A;
+    background: #DBD1C7;
+    padding: 30px;
+    overflow: hidden;
+    color: #4F473A;
+}
+
+.track-title {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 42px;
+    margin-top: 5px;
+    font-family: 'Pinyon Script', cursive;
+}
+
+.trackDisk {
+    position: relative;
+    display: block;
+    margin: 35px auto;
+    width: 185px;
+    height: 185px;
+    border-radius: 50%;
+    background-image: url('images/V_-_Layover.png');
+    background-size: cover;
+    border: 1px solid black;
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.358);
+    animation: rotate 20s linear infinite;
+    animation-play-state: paused; /* disk stops rotating when not playing */
+}
+
+.trackDisk.play {
+    animation-play-state: running;
+}
+
+.trackDisk::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    background: #DBD1C7;
+}
+
+/* rotate animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.song-slider {
+    width: 100%;
+    position: relative;
+}
+
+.seek-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 10px;
+    background: #ACA187;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1px;
+    height: 20px;
+    box-shadow: -400px 0 0 400px #665826;
+}
+
+.time-current,
+.duration-song {
+    font-size: 14px;
+}
+
+.duration-song {
+    position: absolute;
+    right: 0;
+}
+
+/* To create play and pause button CSS Properties*/
+.controls {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.clickBTN {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #8F814C;
+    cursor: pointer;
+    border: none;
+}
+
+.clickBTN span {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 30px;
+    border-radius: 2px;
+    background: #FFFFFF;
+    transition: .5s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* pause button */
+}
+
+.clickBTN span:nth-child(2) {
+    left: 55%;
+    transform-origin: center;
+}
+
+.clickBTN.pause span:nth-child(2) {
+    transform: translateY(-50%) scaleY(0);
+}
+
+.clickBTN.pause span:nth-child(1) {
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%); /* play button */
+}
+
+/* Pulse Animation*/
+.clickBTN.pause {
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0;
+    }
+
+    50% {
+        box-shadow: 0 0 0 5px #8f814c52;
+    }
+
+    100% {
+        box-shadow: 0 0 0 5px #8f814c82;
+    }
+}
+
+.Btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #8F814C;
+}
+
+
+
+/* Artist Section CSS Properties */
+.artistBg {
+    background-image: url('bg-images/ArtistBG.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.artistSec {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 0.7fr 0.1fr 1fr;
+    grid-template-areas:
+        "Img about"
+        "Img space"
+        "Img desc";
+}
+
+.artistTitle {
+    grid-area: about;
+    display: grid;
+    place-items: center;
+}
+
+.artistTitle img {
+    height: 30vh;
+}
+
+.artistImage {
+    grid-area: Img;
+    display: grid;
+    place-items: center;
+    border-right: 2px solid #4F473A;
+}
+
+.artistImage img {
+    width: 90%;
+    transition: 0.2s ease;
+}
+
+.artistImage img:hover {
+    transform: rotate(-6deg)
+}
+
+.space {
+    grid-area: space;
+    border-top: 2px solid #4F473A;
+
+}
+
+.artistDesc {
+    grid-area: desc;
+}
+
+.artistDesc p {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #4F473A;
+}
+
+
+
+/* To make Sections Responsive !! */
+/* Add media queries for responsiveness */
+
+/* Devices: 1440px x 900px */
+@media only screen and (max-width:1450px) and (min-width:1420px) {
+    /* Logo and Nav */
+    .LogoImg img {
+        width: 250px;
+    }
+    .nav-links a {
+        font-size: 20px;
+    }
+    /* About */
+    .aboutTitle h1 {
+        top: 50%;
+        font-size: 95px;
+    }
+
+    .vLine {
+        border-left: 5px solid #4F473A;
+    }
+
+    .aboutContent p {
+        top: 10%;
+        font-size: 27px;
+    }
+
+    /* Tracks */
+
+    .tracksSec {
+        width: 330px;
+        height: 500px;
+    }
+
+    .track-title {
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+    .trackDisk {
+        width: 185px;
+        height: 185px;
+    }
+
+}
+
+
+/* Devices: 768px x 1024px */
+@media only screen and (max-width: 850px) {
+    /* About */
+    .aboutTitle h1 {
+        top: 30%;
+        font-size: 90px;
+    }
+
+    .aboutContent p {
+        top: 8%;
+        font-size: 27px;
+    }
+
+    /* Tracks */
+    .main-container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 0.2fr 1fr;
+        grid-template-areas:
+            "title title title"
+            "player player player";
+    }
+
+    .playerTitle img {
+        width: 90%;
+        margin-top: 135px;
+    }
+
+    .track-title {
+        font-size: 42px;
+        margin-top: 10px;
+    }
+
+    .tracksSec {
+        width: 320px;
+        height: 520px;
+    }
+
+    .trackDisk {
+        width: 195px;
+        height: 195px;
+        margin-bottom: 30px;
+    }
+
+    .seek-bar {
+        height: 6px;
+    }
+
+    .time-current,
+    .duration-song {
+        font-size: 16px;
+    }
+
+    .clickBTN {
+        width: 70px;
+        height: 70px;
+    }
+
+    .Btn {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Artist */
+    .space {
+        display: none;
+    }
+
+    .artistSec {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 0.1fr 1fr;
+        grid-template-areas:
+            "about"
+            "Img"
+            "desc";
+    }
+
+    .artistTitle img {
+        margin-top: 40px;
+        height: 15vh;
+    }
+
+    .artistImage {
+        border-right: none;
+    }
+
+    .artistImage img {
+        width: 50%;
+    }
+
+    .artistDesc p {
+        font-size: 18px;
+    }
+
+}
+
+/* random devices */
+@media only screen and (max-width: 680px) {
+
+    /* Artist */
+    .artistTitle img {
+        height: 15vh;
+    }
+
+    .artistImage {
+        grid-area: Img;
+        display: grid;
+        place-items: center;
+        border-right: none;
+    }
+
+    .artistImage img {
+        width: 40%;
+    }
+
+    .artistDesc p {
+        margin-right: 2px;
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 580px) {
+    .aboutTitle h1 {
+        font-size: 55px;
+    }
+
+    .aboutContent p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .aboutTitle h1 {
+        font-size: 50px;
+    }
+}
+
+
+/* Devices: 411px x 731px */
+@media only screen and (max-width: 420px) {
+
+    /* Logo, Nav, and Title */
+    .LogoImg img {
+        width: 230px;
+    }
+
+    header label {
+        font-size: 18px;
+    }
+
+    .homeTitle img {
+        width: 90%;
+    }
+
+    /* About */
+    .aboutTitle h1 {
+        top: 45%;
+        font-size: 50px;
+    }
+    .vLine {
+        border-left: 2px solid #4F473A;
+    }
+
+    .aboutContent p {
+        top: 6%;
+        font-size: 16px;
+    }
+
+    /* Tracks */
+    .playerTitle img {
+        margin-top: 90px;
+        width: 90%;
+    }
+
+    /* Artist */
+    .artistTitle img {
+        height: 12vh;
+    }
+
+    .artistImage img {
+        width: 65%;
+    }
+
+    .artistDesc p {
+        margin: 20px 10px 0px 4px;
+        font-size: 12px;
+    }
+
+
+}
+
+
+/* Devices: 375px x 812px */
+@media only screen and (max-width: 390px) {
+
+    /* Logo, Nav, and Title */
+    .LogoImg img {
+        width: 200px;
+    }
+    header label {
+        font-size: 14px;
+    }
+
+    .homeTitle img {
+        width: 90%;
+    }
+
+    /* About */
+    .aboutTitle h1 {
+        top: 30%;
+        font-size: 60px;
+    }
+
+    .aboutContent p {
+        top: 10%;
+        font-size: 19px;
+    }
+
+    /* Tracks */
+    .main-container {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 0.2fr 1fr;
+        grid-template-areas:
+            "title title title"
+            "player player player";
+    }
+
+    .playerTitle img {
+        width: 90%;
+        margin-top: 120px;
+    }
+
+    .track-title {
+        font-size: 40px;
+        margin-top: 0px;
+    }
+
+    .tracksSec {
+        width: 300px;
+        height: 450px;
+    }
+
+    .trackDisk {
+        width: 145px;
+        height: 145px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .seek-bar {
+        height: 5px;
+    }
+
+    .time-current,
+    .duration-song {
+        font-size: 14px;
+    }
+
+    .clickBTN {
+        width: 60px;
+        height: 60px;
+    }
+
+    .Btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Artist */
+    .artistTitle img {
+        margin-top: 20px;
+        height: 12vh;
+    }
+
+    .artistImage img {
+        width: 65%;
+    }
+
+    .artistDesc p {
+        margin: 20px 14px 0px 14px;
+        text-align: center;
+        font-size: 13px;
+        line-height: 1.3;
+    }
+}
+
+/* Devices: 320px x 480px */
+@media only screen and (max-width:320px) {
+
+    /* Logo, Nav, and Title */
+    .LogoImg img {
+        width: 190px;
+    }
+    
+    .nav-links a {
+        font-size: 19px;
+    }
+
+    .homeTitle img {
+        width: 90%;
+    }
+
+    /* About */
+    .aboutTitle h1 {
+        top: 20%;
+        font-size: 50px;
+    }
+
+    .vLine {
+        border-left: 2px solid #4F473A;
+    }
+
+    .aboutContent p {
+        top: 10%;
+        font-size: 12px;
+    }
+
+    /* Tracks */
+    .playerTitle img {
+        margin-top: 10px;
+        width: 90%;
+    }
+
+    .trackDisk {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.358);
+    }
+
+    .track-title {
+        font-size: 30px;
+        margin-top: 0px;
+    }
+
+    .tracksSec {
+        width: 260px;
+        height: 370px;
+    }
+
+    .trackDisk {
+        width: 125px;
+        height: 125px;
+    }
+
+
+    .time-current,
+    .duration-song {
+        font-size: 12px;
+    }
+
+    .clickBTN {
+        width: 45px;
+        height: 45px;
+    }
+
+    .Btn {
+        width: 33px;
+        height: 33px;
+    }
+
+    /* Artist */
+    .artistTitle img {
+        height: 13vh;
+    }
+
+    .artistImage img {
+        width: 50%;
+    }
+
+    .artistDesc p {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 8.5px;
+        line-height: 1.3;
+    }
+
+}
